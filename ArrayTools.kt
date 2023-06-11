@@ -11,7 +11,9 @@ fun main() {
     val shift = sc.nextInt()
     val cipherresult = caeserCipher(text,shift)
     println("The Ciphertext for $text is $cipherresult")
-    
+    var arr1 = arrayOf(3,20,30,40,50,60)
+    val avgarr = avgArray(arr1)
+    println("The average is: %.2f".format(avgarr))
 }
 
 fun caeserCipher(plainText: String, shiftNum: Int): String{
@@ -20,7 +22,7 @@ fun caeserCipher(plainText: String, shiftNum: Int): String{
     if(shift > 26){
         shift = shift % 26
     }
-    else if (shift <26){
+    else if (shift < 26){
         shift = (shift % 26) + 26
     }
     var cipherText = ""
@@ -51,4 +53,14 @@ fun caeserCipher(plainText: String, shiftNum: Int): String{
         }
     }
     return cipherText
+}
+
+fun avgArray(arr: Array<Int>): Double{
+    var sum = 0.0
+    var len = arr.size
+    for (i in arr){
+        sum += i
+    }
+    val avg: Double = sum/len
+    return avg
 }
