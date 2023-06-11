@@ -3,22 +3,36 @@ package lab2
 import java.util.Scanner
 
 fun main() {
-
-    // val sc = Scanner(System.`in`)
-    // print("Enter the text you want to Cipher: ")
-    // val text = sc.next()
-    // print("Enter the value of how many shifts you want to Cipher: ")
-    // val shift = sc.nextInt()
-    // val cipherresult = caeserCipher(text, shift)
-    // println("The Ciphertext for $text is $cipherresult")
-    // var arr1 = arrayOf(3, 20, 30, 40, 50, 60)
-    // val avgarr = avgArray(arr1)
-    // println("The average is: %.2f".format(avgarr))
-    // var arr2 = arrayOf(3, 20, 30, 40, 50, 60)
-    // println(arrContains(arr2, 6))
-    var arr3 = arrayOf(3, 20, 30, 40, 50, 60)
-    println(arrReverse(arr3).joinToString())
-
+    val selection = menu()
+    val sc = Scanner(System.`in`)
+    when (selection) {
+        1 -> {
+            print("Enter the text you want to Cipher: ")
+            val text = sc.next()
+            print("Enter the value of how many shifts you want to Cipher: ")
+            val shift = sc.nextInt()
+            val cipherresult = caeserCipher(text, shift)
+            println("The Ciphertext for $text is $cipherresult")
+        }
+        2 -> {
+            val arr = arrInput()
+            val avgarr = avgArray(arr)
+            println("The average is: %.2f".format(avgarr))
+        }
+        3 -> {
+            val arr = arrInput()
+            print("Enter the value you want to check in Array: ")
+            val numToFind = sc.nextInt()
+            println(arrContains(arr, numToFind))
+        }
+        4 -> {
+            val arr = arrInput()
+            println("The reversed Array is " + arrReverse(arr).joinToString())
+        }
+        else -> {
+            println("Please select a Valid Option!!")
+        }
+    }
 }
 
 fun caeserCipher(plainText: String, shiftNum: Int): String {
@@ -83,4 +97,31 @@ fun arrReverse(arr: Array<Int>): Array<Int> {
         arr[size - i - 1] = temp
     }
     return arr
+}
+
+fun arrInput(): Array<Int> {
+    val sc = Scanner(System.`in`)
+    print("Enter the length of Array: ")
+    val len: Int = sc.nextInt()
+    println("Enter Array values")
+    val arr = Array(len) { sc.nextInt() }
+    return arr
+}
+
+fun menu(): Int {
+    var sc = Scanner(System.`in`)
+    print(
+            """
+        *****Menu*****
+        Please select the action you would like to do:
+        1. Cipher a text
+        2. Calculate average of an Array
+        3. Check if Array contains a value
+        4. Reverse an Array
+        **************
+        Enter the value: 
+    """.trimIndent()
+    )
+    var userselection: Int = sc.nextInt()
+    return userselection
 }
