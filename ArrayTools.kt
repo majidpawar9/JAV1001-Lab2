@@ -14,6 +14,8 @@ fun main() {
     var arr1 = arrayOf(3,20,30,40,50,60)
     val avgarr = avgArray(arr1)
     println("The average is: %.2f".format(avgarr))
+    var arr2 = arrayOf(3,20,30,40,50,60)
+    println(arrContains(arr2, 6))
 }
 
 fun caeserCipher(plainText: String, shiftNum: Int): String{
@@ -63,4 +65,14 @@ fun avgArray(arr: Array<Int>): Double{
     }
     val avg: Double = sum/len
     return avg
+}
+
+fun arrContains(arr: Array<Int>, numToFind: Int): Boolean{
+    var flag: Boolean = false
+    for(i in arr){
+        if(i == numToFind){
+            flag = true
+        }
+    }
+    return flag
 }
