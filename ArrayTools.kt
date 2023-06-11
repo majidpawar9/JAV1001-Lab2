@@ -5,6 +5,8 @@ import java.util.Scanner
 fun main() {
     val selection = menu()
     val sc = Scanner(System.`in`)
+
+    // Switch loop to execute appropriate selected option by user
     when (selection) {
         1 -> {
             print("Enter the text you want to Cipher: ")
@@ -35,6 +37,7 @@ fun main() {
     }
 }
 
+// Function to convert plaintext to Caeser Cipher
 fun caeserCipher(plainText: String, shiftNum: Int): String {
 
     var shift = shiftNum
@@ -69,9 +72,10 @@ fun caeserCipher(plainText: String, shiftNum: Int): String {
     return cipherText
 }
 
+// Function to Calculate Average of Array values
 fun avgArray(arr: Array<Int>): Double {
     var sum = 0.0
-    var len = arr.size
+    val len = arr.size
     for (i in arr) {
         sum += i
     }
@@ -79,6 +83,7 @@ fun avgArray(arr: Array<Int>): Double {
     return avg
 }
 
+// Function to check if Array Contains the value
 fun arrContains(arr: Array<Int>, numToFind: Int): Boolean {
     var flag: Boolean = false
     for (i in arr) {
@@ -89,6 +94,7 @@ fun arrContains(arr: Array<Int>, numToFind: Int): Boolean {
     return flag
 }
 
+// Function to reverse the given Array
 fun arrReverse(arr: Array<Int>): Array<Int> {
     val size = arr.size
     for (i in 0 until size / 2) {
@@ -99,6 +105,7 @@ fun arrReverse(arr: Array<Int>): Array<Int> {
     return arr
 }
 
+// Function to take user input as Array
 fun arrInput(): Array<Int> {
     val sc = Scanner(System.`in`)
     print("Enter the length of Array: ")
@@ -108,6 +115,7 @@ fun arrInput(): Array<Int> {
     return arr
 }
 
+// Main Menu to display to the user for selecting appropriate action
 fun menu(): Int {
     var sc = Scanner(System.`in`)
     print(
