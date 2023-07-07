@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.majid.jav1001_lab4'
+    namespace 'com.majid.scorekeepingapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.majid.jav1001_lab4"
+        applicationId "com.majid.scorekeepingapp"
         minSdk 24
         targetSdk 33
         versionCode 1

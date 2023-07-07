@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JAV1001Lab4"
+        android:theme="@style/Theme.ScoreKeepingApp"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
